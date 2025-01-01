@@ -10,13 +10,15 @@
         [control]="signInForm.get('password')" [required]="true" errorMessage="Password is required."></app-textfield>
 
     </div>
+    <div class="login-form__forgot">
+      <a routerLink="/forgot-password">Forgot password?</a>
+    </div>
     <button type="submit" class="login-form__btn">Login</button>
     <button type="button" class="login-form__btn google-btn" (click)="loginWithGoogle()">
       Login with Google
     </button>
     <div class="login-form__links">
-      <a routerLink="/forgot-password">Forgot Password?</a>
-      <a routerLink="/signup">Sign Up</a>
+      Don't have an account? <a routerLink="/signup">Sign Up </a>now.
     </div>
   </form>
 </div>
