@@ -1,0 +1,42 @@
+@use "../../../styles/variables.scss" as vars;
+
+.textfield {
+  margin-bottom: 1rem;
+  text-align: left;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: vars.$primary-color;
+    }
+
+    &.textfield__input--error {
+      border-color: red !important;
+
+      &:focus.textfield__input--error {
+        border-color: red !important;
+      }
+    }
+  }
+
+  &__error {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: red;
+  }
+}

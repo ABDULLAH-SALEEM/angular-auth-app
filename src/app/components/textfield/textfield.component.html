@@ -1,0 +1,9 @@
+<div class="textfield">
+    <label [for]="inputId">{{ label }}</label>
+    <input [type]="type" [id]="inputId" [placeholder]="placeholder" [formControl]="control" [required]="required"
+        class="textfield__input"
+        [ngClass]="{'textfield__input--error': control?.invalid && (control?.dirty || control?.touched)}" />
+    <div *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="textfield__error">
+        {{ errorMessage }}
+    </div>
+</div>

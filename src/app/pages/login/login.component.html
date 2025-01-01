@@ -1,0 +1,22 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <h1 class="login-form__title">Login</h1>
+    <div class="login-form__field">
+      <app-textfield label="Email" type="email" placeholder="Enter your email" [control]="signInForm.get('email')"
+        [required]="true" errorMessage="Email is required and must be valid."></app-textfield>
+    </div>
+    <div class="login-form__field">
+      <app-textfield label="Password" type="password" placeholder="Enter your password"
+        [control]="signInForm.get('password')" [required]="true" errorMessage="Password is required."></app-textfield>
+
+    </div>
+    <button type="submit" class="login-form__btn">Login</button>
+    <button type="button" class="login-form__btn google-btn" (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+    <div class="login-form__links">
+      <a routerLink="/forgot-password">Forgot Password?</a>
+      <a routerLink="/signup">Sign Up</a>
+    </div>
+  </form>
+</div>
