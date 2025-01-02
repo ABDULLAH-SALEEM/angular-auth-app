@@ -1,0 +1,32 @@
+<div class="signup-container">
+    <form class="signup-form" (ngSubmit)="onSubmit()">
+        <h1 class="signup-form__title">Join now</h1>
+        <div class="signup-form__field">
+            <app-textfield label="Email" type="email" placeholder="Enter your email" [control]="signupForm.get('email')"
+                [required]="true" errorMessage="Email is required and must be valid."></app-textfield>
+        </div>
+        <div class="signup-form__field">
+            <app-textfield label="Password" type="password" placeholder="Enter your password"
+                [control]="signupForm.get('password')" [required]="true"
+                errorMessage="Password is required."></app-textfield>
+        </div>
+        <div class="signup-form__field">
+            <app-textfield [isPassword]="true" label="Confirm Password" type="password"
+                placeholder="Enter your password" [control]="signupForm.get('cnf_password')" [required]="true"
+                errorMessage="Password is required."></app-textfield>
+        </div>
+        <div class="signup-form__forgot">
+            <a routerLink="/forgot-password">Forgot password?</a>
+        </div>
+        <app-loader-button title="Join" type="submit" />
+        <p>OR</p>
+        <button type="button" class="signup-form__btn google-btn" (click)="loginWithGoogle()">
+            Join with Google
+        </button>
+        <div class="signup-form__links">
+            Already have an account? <a routerLink="/signup">Login </a>now.
+        </div>
+
+
+    </form>
+</div>

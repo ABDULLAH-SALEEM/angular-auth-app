@@ -1,8 +1,18 @@
 <div class="textfield">
     <label [for]="inputId">{{ label }}</label>
-    <input [type]="type" [id]="inputId" [placeholder]="placeholder" [formControl]="control" [required]="required"
-        class="textfield__input"
-        [ngClass]="{'textfield__input--error': control?.invalid && (control?.dirty || control?.touched)}" />
+    <div class="textfield__wrapper" [ngClass]="{
+        'textfield__wrapper--focused': control?.dirty && control?.valid,
+        'textfield__wrapper--error': control?.invalid && (control?.dirty || control?.touched)
+      }">
+        <input [type]="isPassword && isPasswordVisible ? 'text' : type" [id]="inputId" [placeholder]="placeholder"
+            [formControl]="control" [required]="required" class="textfield__input"
+            [ngClass]="{ 'textfield__input--error': control?.invalid && (control?.dirty || control?.touched) }"
+            (focus)="onFocus()" (blur)="onBlur()" />
+        <button *ngIf="isPassword" type="button" class="textfield__toggle" (click)="togglePasswordVisibility()"
+            aria-label="Toggle Password Visibility">
+            <i class="material-icons icon">{{ isPasswordVisible ? 'visibility' : 'visibility_off' }}</i>
+        </button>
+    </div>
     <div *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="textfield__error">
         {{ errorMessage }}
     </div>

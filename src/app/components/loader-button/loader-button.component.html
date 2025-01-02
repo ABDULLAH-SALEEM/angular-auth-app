@@ -1,0 +1,5 @@
+<div [ngClass]="{'disabled': loading, 'button':!loading}">
+    <i class="material-icons loading-spinner" *ngIf="loading"> {{'autorenew'}}</i>
+    <button [type]="type"
+        [ngClass]="{'disabled__btn': loading, 'button__btn':!loading}">{{loading?loadingTitle:title}}</button>
+</div>

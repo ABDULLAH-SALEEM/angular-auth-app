@@ -15,6 +15,21 @@ export class TextfieldComponent {
   @Input() control: any = null;
   @Input() required: boolean = false;
   @Input() errorMessage: string = 'Invalid field';
+  @Input() isPassword: boolean = false;
+  isFocused: boolean = false;
+  isPasswordVisible: boolean = false;
+
+  onFocus(): void {
+    this.isFocused = true;
+  }
+
+  onBlur(): void {
+    this.isFocused = false;
+  }
+
+  togglePasswordVisibility(): void {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 
   get inputId(): string {
     return this.label.toLowerCase().replace(/\s+/g, '-');

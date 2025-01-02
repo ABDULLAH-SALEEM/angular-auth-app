@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { TextfieldComponent } from "../../components/textfield/textfield.component";
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  Validators,
+} from '@angular/forms';
+import { TextfieldComponent } from '../../components/textfield/textfield.component';
+import { LoaderButtonComponent } from '../../components/loader-button/loader-button.component';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, TextfieldComponent],
+  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   signInForm: FormGroup;

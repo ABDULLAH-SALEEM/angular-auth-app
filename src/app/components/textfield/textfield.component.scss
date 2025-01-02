@@ -11,27 +11,40 @@
     color: #555;
   }
 
-  &__input {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
+  &__wrapper {
+    display: flex;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 4px;
-    outline: none;
-    transition: border 0.3s;
+    width: 100%;
+    padding: 0.8rem;
     box-sizing: border-box;
+    transition: border-color 0.3s;
 
-    &:focus {
+    &--focused {
       border-color: vars.$primary-color;
     }
 
-    &.textfield__input--error {
-      border-color: red !important;
-
-      &:focus.textfield__input--error {
-        border-color: red !important;
-      }
+    &--error {
+      border-color: red;
     }
+  }
+  &__toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1rem;
+    border: 0px;
+    outline: none;
+    box-sizing: border-box;
   }
 
   &__error {
@@ -39,4 +52,8 @@
     font-size: 0.875rem;
     color: red;
   }
+}
+
+.material-icons {
+  font-size: 1.2rem;
 }

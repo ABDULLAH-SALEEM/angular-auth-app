@@ -8,12 +8,12 @@
     <div class="login-form__field">
       <app-textfield label="Password" type="password" placeholder="Enter your password"
         [control]="signInForm.get('password')" [required]="true" errorMessage="Password is required."></app-textfield>
-
     </div>
     <div class="login-form__forgot">
       <a routerLink="/forgot-password">Forgot password?</a>
     </div>
-    <button type="submit" class="login-form__btn">Login</button>
+    <app-loader-button title="Login" type="submit" />
+    <p>OR</p>
     <button type="button" class="login-form__btn google-btn" (click)="loginWithGoogle()">
       Login with Google
     </button>
