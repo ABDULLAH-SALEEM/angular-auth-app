@@ -1,11 +1,9 @@
-<nav class="navbar">
-    <div class="navbar__logo">
-      <img src="assets/logo.png" alt="App Logo" class="navbar__logo-img" />
-      <span class="navbar__app-name">{{title()}}</span>
-    </div>
-    <ul class="navbar__links">
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    </ul>
+<header class="navbar">
+  <div class="navbar__logo">
+    <span routerLink="/home" class="app-name">{{title()}}</span>
+  </div>
+  <ul class="navbar__links">
+    <li><a routerLink="/todo" routerLinkActive="active">Todos</a></li>
     <button class="navbar__logout" (click)="logout()">Logout</button>
-  </nav>
-  
+  </ul>
+</header>

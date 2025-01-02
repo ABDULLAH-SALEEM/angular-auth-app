@@ -7,16 +7,16 @@ import {
 } from '@angular/forms';
 import { TextfieldComponent } from '../../components/textfield/textfield.component';
 import { LoaderButtonComponent } from '../../components/loader-button/loader-button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent],
+  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   signInForm: FormGroup;
-
   constructor(private fb: FormBuilder) {
     this.signInForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

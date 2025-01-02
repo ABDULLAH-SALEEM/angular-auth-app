@@ -11,5 +11,6 @@ export class LoaderButtonComponent {
   @Input() loading: boolean = false;
   @Input() title: string = '';
   @Input() loadingTitle: string = 'Loading....';
-  @Input() type?: string = '';
+  @Input() type?: string = undefined;
+  @Input() onButtonClick?: () => void = undefined;
 }

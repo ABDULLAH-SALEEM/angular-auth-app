@@ -8,10 +8,11 @@ import {
 } from '@angular/forms';
 import { passwordMatchValidator } from '../../helper';
 import { LoaderButtonComponent } from '../../components/loader-button/loader-button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
-  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent],
+  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent, RouterLink],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })

@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { SignupComponent } from './pages/signup/signup.component';
-import { LoginComponent } from './pages/login/login.component';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 // decorator
 @Component({
   selector: 'app-root',
-  imports: [SignupComponent, LoginComponent],
-  template: ` <app-login /> `,
+  imports: [RouterOutlet, HeaderComponent],
+  template: `
+    <app-header />
+    <main>
+      <router-outlet />
+    </main>
+  `,
   styles: [],
 })
 
