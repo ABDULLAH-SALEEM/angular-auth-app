@@ -1,1 +1,5 @@
-<p>todos works!</p>
+<div>
+    @for (todo of todos(); track todo.id) {
+    <app-todos-item [todo]="todo"></app-todos-item>
+    }
+</div>

@@ -1,0 +1,56 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+
+  &.completed {
+    background-color: #e6ffe6;
+    text-decoration: line-through;
+  }
+
+  .todo-info {
+    flex: 1;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 0.5rem 0 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+
+  .todo-actions {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      &.delete-btn {
+        background-color: #ff4d4f;
+        color: white;
+
+        &:hover {
+          background-color: #d9363e;
+        }
+      }
+    }
+  }
+}

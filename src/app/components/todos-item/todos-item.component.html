@@ -1,0 +1,11 @@
+<div class="todo-item" [class.completed]="todo.completed">
+    <div class="todo-info">
+        <h3>{{ todo.title }}</h3>
+    </div>
+    <div class="todo-actions">
+        <button (click)="onToggleComplete()">
+            {{ todo.completed ? 'Unmark' : 'Complete' }}
+        </button>
+        <button (click)="onDeleteTodo()" class="delete-btn">Delete</button>
+    </div>
+</div>
