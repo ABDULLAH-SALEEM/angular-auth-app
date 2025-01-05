@@ -13,18 +13,9 @@ import { catchError } from 'rxjs/operators';
 })
 export class TodosComponent implements OnInit {
   todoService = inject(TodoService);
-  todos = signal<Todo[]>([]);
+  todos = this.todoService.todos;
+
   ngOnInit(): void {
-    this.todoService
-      .getTodos()
-      .pipe(
-        catchError((error: any) => {
-          console.error(error);
-          return [];
-        })
-      )
-      .subscribe((todos) => {
-        this.todos.set(todos);
-      });
+    this.todoService.getTodos();
   }
 }
